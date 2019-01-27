@@ -1,2 +1,2 @@
 # WeatherPi
-Just What is needed for the temp station raspberrypi
+The core program for the raspberry pi temp station
