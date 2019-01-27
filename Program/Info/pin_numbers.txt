@@ -1,0 +1,8 @@
+# the following are the pin numbers of the temp and hum sensors, in order of 0 to n
+DHT22: 26
+# the following pin numbers are the light sensors, in order from 0 to n
+Light: 16
+# the following pin is for the led that blinks
+LED: 12
+# the following pin is the one for the outside temp sensor, bcm pin 4, physical pin 7
+DS18: 28-021318edc3aa
