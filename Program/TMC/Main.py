@@ -60,9 +60,10 @@ try:
                 input_output.log_write(dht_sensor.values, out_temp_sensor.values, light_sensor.values) 
                 uploader.push(dht_sensor.values, out_temp_sensor.values, light_sensor.values)
             led_indicator.blink(BLINKS_OF_LED)
+    reboot();
 
 except KeyboardInterrupt:
-    print("\nUser terminated program. Shutting down.")
+    print("\nUser terminated program.")
     led_indicator.blink()
 
 except IOError as error:
@@ -74,4 +75,7 @@ finally:
     lcd.backlight_off
     lcd.clear
     GPIO.cleanup()
+
+
+def reboot():
     call("sudo reboot", shell=True)

@@ -10,7 +10,7 @@ light_limit = 200000    # maximum values of the light-value-variable
 GPIO.setmode(GPIO.BCM)
 
 def dht_measure(pin, reps=1):
-    humidity, temperature = 0, 0
+    humidity, temperature = -100, -100
     for n in range(reps):
         hum_read, temp_read = Adafruit_DHT.read_retry(Adafruit_DHT.DHT22, pin)
         humidity += hum_read
@@ -26,7 +26,7 @@ def dht_name(n=int):
     return temp_name, hum_name
 
 def out_temp_measure(address, reps=1):
-    temp = 0
+    temp = -100
     path = "/sys/bus/w1/devices/" + address + "/w1_slave"
     for n in range(reps):
         with open(path, "r") as file:
